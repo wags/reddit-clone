@@ -3,7 +3,16 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-    <h1>Hello {{ title }}</h1>
+    <div id="container">
+      <div id="sidebar">
+        Sidebar will go here
+      </div>
+      <div id="content">
+        <div>
+          Article will go here
+        </div>
+      </div>
+    </div>
   `
 })
 export class AppComponent {
