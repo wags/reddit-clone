@@ -12,6 +12,14 @@ class Article {
   public date(): Date {
     return new Date();
   }
+
+  public voteUp(): void {
+    this.votes = this.votes + 1;
+  }
+
+  public voteDown(): void {
+    this.votes = this.votes - 1;
+  }
 }
 
 @Component({
@@ -42,11 +50,15 @@ export class SidebarComponent {}
           </div>
         </span>
         <span class="ui right floated">
-          <a class="ui small label">
+          <a
+            (click)="upvote()"
+            class="ui small label">
             <i class="arrow up icon"></i>
             Upvote
           </a>
-          <a class="ui small label">
+          <a
+            (click)="downvote()"
+            class="ui small label">
             <i class="arrow down icon"></i>
             Downvote
           </a>
@@ -70,6 +82,14 @@ export class SidebarComponent {}
 })
 export class ArticleComponent {
   @Input() article: Article;
+
+  upvote() {
+    this.article.voteUp();
+  }
+
+  downvote() {
+    this.article.voteDown();
+  }
 }
 
 @Component({
