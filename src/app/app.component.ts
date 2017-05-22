@@ -3,8 +3,11 @@ import { Component, Input } from '@angular/core';
 class Article {
   constructor(
     public title: string,
-    public description: string
-  ) { }
+    public description: string,
+    public votes?: number
+  ) {
+    this.votes = votes || 0;
+  }
 
   public date(): Date {
     return new Date();
@@ -32,7 +35,12 @@ export class SidebarComponent {}
         {{ article.title }}
       </div>
       <div class="meta">
-        Voting and votes will go here
+        <span class="ui blue small label">
+          <i class="heart icon"></i>
+          <div class="detail">
+            {{ article.votes }}
+          </div>
+        </span>
       </div>
       <div class="meta date">
         {{ article.date() | date:'medium' }}
@@ -75,7 +83,8 @@ export class AppComponent {
     this.articles = [
       new Article(
         'The Angular 2 screencast',
-        'The easiest way to learn Angular 2 is with Fullstack.io!'
+        'The easiest way to learn Angular 2 is with Fullstack.io!',
+        10
       ),
       new Article(
         'Fullstack React',
