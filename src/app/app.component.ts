@@ -1,16 +1,15 @@
 import { Component, Input } from '@angular/core';
 
 class Article {
+  public publishedAt: Date;
+
   constructor(
     public title: string,
     public description: string,
     public votes?: number
   ) {
     this.votes = votes || 0;
-  }
-
-  public date(): Date {
-    return new Date();
+    this.publishedAt = new Date();
   }
 
   public voteUp(): void {
@@ -65,7 +64,7 @@ export class SidebarComponent {}
         </span>
       </div>
       <div class="meta date">
-        {{ article.date() | date:'medium' }}
+        {{ article.publishedAt | date:'medium' }}
       </div>
       <div class="meta description">
         <p>{{ article.description }}</p>
