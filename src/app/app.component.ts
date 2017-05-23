@@ -1,19 +1,7 @@
 import { Component } from '@angular/core';
-import { Article } from './article';
-
-import { ArticleService } from './article.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
-export class AppComponent {
-  articles: Article[];
-
-  constructor(
-    private articleService: ArticleService
-  ) {
-    articleService.getArticles()
-      .then(articles => this.articles = articles);
-  }
-}
+export class AppComponent {}
