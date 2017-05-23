@@ -25,9 +25,10 @@ export class ArticleService {
       })
       .toPromise()
       .then(resp => resp.json())
-      .then(json => {
-        console.log('json ->', json);
-        return json;
+      .then(json => json.articles)
+      .then(articles => {
+        console.log('json ->', articles);
+        return articles;
       })
       .catch(err => {
         console.log('We got an error', err);
