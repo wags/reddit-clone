@@ -21,6 +21,9 @@ export class ArticleService {
       .then(json => {
         console.log('json ->', json);
         return json;
+      })
+      .catch(err => {
+        console.log('We got an error', err);
       });
   }
 }
