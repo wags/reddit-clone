@@ -6,8 +6,8 @@ export class ArticleService {
 
   constructor() { }
 
-  public getArticles(): Article[] {
-    return [
+  public getArticles(): Promise<Article[]> {
+    return Promise.resolve([
       new Article(
         'The Angular 2 screencast',
         'The easiest way to learn Angular 2 is with Fullstack.io!',
@@ -25,6 +25,6 @@ export class ArticleService {
         'But what about elm?',
         'Everybody likes elm'
       )
-    ];
+    ]);
   }
 }
