@@ -2,7 +2,7 @@
   <h2>Articles</h2>
   <div class="ui divided items">
     <app-article
-      *ngFor="let article of articles"
+      *ngFor="let article of articles | async"
       [article]="article"
       class="item"></app-article>
   </div>
