@@ -16,10 +16,16 @@ export class ArticleListHeaderComponent implements OnInit {
 
   changeDirection() {
     // update the direction
+    this.sortDirection = this.sortDirection * -1;
+    this._updateSort();
   }
 
   changeSort(filter: string) {
     // update the filter
+  }
+
+  _updateSort() {
+    // call sortBy on the article service
   }
 
   ngOnInit() {
