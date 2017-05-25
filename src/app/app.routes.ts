@@ -5,6 +5,11 @@ import { ArticleListComponent} from './article-list/article-list.component';
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: 'news/reddit-r-all',
+    pathMatch: 'full'
+  },
+  {
     path: 'about',
     component: AboutComponent
   },
