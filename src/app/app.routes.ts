@@ -14,7 +14,7 @@ const routes: Routes = [
     component: AboutComponent
   },
   {
-    path: 'news/:sourcekey',
+    path: 'news/:sourceKey',
     component: ArticleListComponent
   }
 ];
