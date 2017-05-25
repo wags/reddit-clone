@@ -15,13 +15,11 @@ import { environment } from '../environments/environment';
  *   1 == a comes before b
  *   -1 == b comes before a
  */
-interface ArticleSortFn {
-  (a: Article, b: Article): number;
-}
+type ArticleSortFn =
+  (a: Article, b: Article) => number;
 
-interface ArticleSortOrderFn {
-  (direction: number): ArticleSortFn;
-}
+type ArticleSortOrderFn =
+  (direction: number) => ArticleSortFn;
 
 const sortByTime: ArticleSortOrderFn =
   (direction: number) => (a: Article, b: Article) => {
