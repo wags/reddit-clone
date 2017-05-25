@@ -29,8 +29,14 @@ const sortByTime: ArticleSortOrderFn =
       (b.publishedAt.getTime() - a.publishedAt.getTime());
 };
 
+const sortByVotes: ArticleSortOrderFn =
+  (direction: number) => (a: Article, b: Article) => {
+    return direction * (b.votes - a.votes);
+  };
+
 const sortFns = {
-  'Time': sortByTime
+  'Time': sortByTime,
+  'Votes': sortByVotes
 };
 
 @Injectable()
