@@ -4,22 +4,21 @@
     <div class="item">
       <div class="header">News sources</div>
     </div> <!-- item -->
-  </div> <!-- sidebar menu container -->
-
-  <div class="item">
-    <div class="menu">
-      <a
-        class="item news-item"
-        *ngFor="let source of sources | async"
-        href="#">
-        <span class="side-news-item">
-          <img class="ui avatar image"
-            src="{{ source['urlsToLogos']['small'] }}" />
+    <div class="item">
+      <div class="menu">
+        <a
+          class="item news-item"
+          *ngFor="let source of sources | async"
+          href="#">
           <span class="side-news-item">
-            {{ source['name'] }}
+            <img class="ui avatar image"
+              src="{{ source['urlsToLogos']['small'] }}" />
+            <span class="side-news-item">
+              {{ source['name'] }}
+            </span>
           </span>
-        </span>
-      </a>
-    </div> <!-- menu -->
-  </div> <!-- item -->
+        </a>
+      </div> <!-- menu -->
+    </div> <!-- item -->
+  </div> <!-- sidebar menu container -->
 </div> <!-- sidebar-container -->
