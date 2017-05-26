@@ -11,7 +11,7 @@ declare var jQuery: any;
 export class ArticleListHeaderComponent implements OnInit {
 
   private currentFilter = 'Time';
-  private sortDirection = 1;
+  public sortDirection = 1;
 
   constructor(
     private articleService: ArticleService
